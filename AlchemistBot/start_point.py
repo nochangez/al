@@ -1,0 +1,57 @@
+# coding=utf-8
+
+
+import logging
+
+from aiogram import executor
+
+from data.config import dispatcher
+from handlers.text_handlers.goods import register_handlers_goods
+from handlers.text_handlers.gifts import register_handlers_gifts
+from handlers.data_handlers.top_up import register_handlers_top_up
+from handlers.command_handlers.start import register_handlers_start
+from handlers.command_handlers.admin import register_handlers_admin
+from handlers.text_handlers.support import register_handlers_support
+from handlers.data_handlers.check_sub import register_handlers_check_sub
+from handlers.data_handlers.admin_back import register_handlers_admin_back
+from handlers.text_handlers.my_account import register_handlers_my_account
+from handlers.data_handlers.choose_city import register_handlers_choose_city
+from handlers.data_handlers.admin_goods import register_handlers_admin_goods
+from handlers.data_handlers.admin_gifts import register_handlers_admin_gifts
+from handlers.data_handlers.admin_cities import register_handlers_admin_cities
+from handlers.data_handlers.check_payment import register_handlers_check_payment
+from handlers.data_handlers.admin_mailing import register_handlers_admin_mailing
+from handlers.data_handlers.admin_profile import register_handlers_admin_profile
+from handlers.data_handlers.admin_payments import register_handlers_admin_payments
+
+
+logging.basicConfig(level=logging.DEBUG)
+
+
+# command handlers
+register_handlers_start(dispatcher)
+register_handlers_admin(dispatcher)
+
+# data handlers
+register_handlers_top_up(dispatcher)
+register_handlers_check_sub(dispatcher)
+register_handlers_admin_back(dispatcher)
+register_handlers_choose_city(dispatcher)
+register_handlers_admin_goods(dispatcher)
+register_handlers_admin_gifts(dispatcher)
+register_handlers_admin_cities(dispatcher)
+register_handlers_check_payment(dispatcher)
+register_handlers_admin_mailing(dispatcher)
+register_handlers_admin_profile(dispatcher)
+register_handlers_admin_payments(dispatcher)
+
+
+# text handlers
+register_handlers_goods(dispatcher)
+register_handlers_gifts(dispatcher)
+register_handlers_support(dispatcher)
+register_handlers_my_account(dispatcher)
+
+
+if __name__ == "__main__":
+    executor.start_polling(dispatcher, skip_updates=True)

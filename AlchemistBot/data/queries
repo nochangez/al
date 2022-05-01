@@ -1,0 +1,38 @@
+CREATE DATABASE alchemist;
+
+USE alchemist;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(20),
+    city VARCHAR(15),
+    purchases INT,
+    balance DECIMAL(12, 2)
+);  -- users table
+
+CREATE TABLE goods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    good_name VARCHAR(70),
+    price DECIMAL(8, 2)
+);  -- goods table
+
+CREATE TABLE payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id VARCHAR(20),
+    payment_value DECIMAL(8, 2),
+    payment_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);  -- payments table
+
+CREATE TABLE gifts (
+    gift TEXT,
+    coordinates TEXT
+);  -- gifts table
+
+CREATE TABLE mailing (
+    mailing text
+);  -- mailing table
+
+CREATE TABLE cities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    city VARCHAR(20)
+);  -- cities table
