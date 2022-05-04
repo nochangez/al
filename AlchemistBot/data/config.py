@@ -17,7 +17,7 @@ tokens = {
 
 
 # IDS
-admins = [650387714, 387869905, 5040406694]  # admins
+admins = [650387714, 387869905, 5393265384]  # admins
 channel_id = -1001693018362  # channel id -
 
 
